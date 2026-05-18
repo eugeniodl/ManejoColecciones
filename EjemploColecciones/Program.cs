@@ -1,96 +1,23 @@
-﻿using System.Collections;
+﻿int[] numeros = { 1, 2, 3, 4, 5 };
+numeros[0] = 10; // Modificar el primer elemento del arreglo
+numeros[1] = 10; // Modificar el primer elemento del arreglo
+numeros[2] = 10; // Modificar el primer elemento del arreglo
+numeros[3] = 10; // Modificar el primer elemento del arreglo
+numeros[4] = 10; // Modificar el primer elemento del arreglo
+//numeros[5] = 10; // Esto causará un error de índice fuera de rango
 
-int[] numeros = new int[3];
-numeros[0] = 1;
-numeros[1] = 2;
-numeros[2] = 3;
-//numeros[3] = 4;
+for (int i = 0; i < numeros.Length; i++)
+{
+    Console.WriteLine(numeros[i]);
+}
 
-int[] temp = new int[5];
+int[] temp = new int[10];
 Array.Copy(numeros, temp, numeros.Length);
-temp[3] = 4;
-numeros = temp;
 
-List<int> list = new List<int>();
-list.Add(1);
-list.Add(2);
-list.Add(3);
-list.Add(4);
-list.Add(3);
-//list.Add("Ana");
-list.Remove(3);
-list.RemoveAt(0);
-Console.WriteLine(list.Count);
-Console.WriteLine(list[1]);
+List<int> numerosList = new List<int> { 1, 2, 3, 4, 5 };
+numerosList.Add(10); // Agregar un nuevo elemento a la lista
 
-ArrayList lista = new ArrayList();
-lista.Add(1);
-lista.Add("Ana");
-//int numero = (int)lista[1];
-
-
-void Imprimir(IEnumerable<string> items)
+foreach (int numero in numerosList)
 {
-    foreach (string item in items)
-    {
-        Console.WriteLine(item);
-    }
+    Console.WriteLine(numero);
 }
-
-List<string> estudiantes = new List<string>();
-estudiantes.Add("Felipe");
-estudiantes.Add("Alejandra");
-estudiantes.Add("José");
-string[] arreglo = { "Edgar", "Esteban" };
-HashSet<string> conjunto = new HashSet<string> { "Axl", "Jared" };
-
-Imprimir(estudiantes);
-Imprimir(arreglo);
-Imprimir(conjunto);
-
-void ProcesarColeccion(ICollection<string> coleccion)
-{
-    Console.WriteLine($"Total: {coleccion.Count}");
-
-    if(!coleccion.IsReadOnly)
-    {
-        coleccion.Add("Nuevo elemento");
-        coleccion.Remove("Alguno");
-    }
-
-    string[] copia = new string[coleccion.Count];
-    coleccion.CopyTo(copia, 0);
-}
-
-ProcesarColeccion(estudiantes);
-
-void ModificarPorIndice(IList<int> lista)
-{
-    Console.WriteLine(lista[0]);
-    lista.Insert(1, 99);
-    lista.RemoveAt(2);
-    lista[0] = 100;
-}
-
-List<int> ints = new List<int> { 1, 2, 3};
-ModificarPorIndice(ints);
-HashSet<int> ints1 = new HashSet<int> { 1, 2, 3 };
-//ModificarPorIndice(ints1);
-
-string ObtenerValorSeguro(IDictionary<string, int> dict, string clave)
-{
-    if (dict.TryGetValue(clave, out int valor))
-        return $"Encontrado: {valor}";
-
-    return "Clave no existe";
-}
-
-Dictionary<string, int> edades = new Dictionary<string, int>();
-edades.Add("Ana", 25);
-edades.Add("Luis", 30);
-edades.Add("Adolfo", 30);
-edades.Add("Roberto", 30);
-
-Console.WriteLine(edades["Ana"]);
-Console.WriteLine(ObtenerValorSeguro(edades, "Luis"));
-
