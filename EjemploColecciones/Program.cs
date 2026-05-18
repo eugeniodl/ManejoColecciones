@@ -1,23 +1,34 @@
-﻿int[] numeros = { 1, 2, 3, 4, 5 };
-numeros[0] = 10; // Modificar el primer elemento del arreglo
-numeros[1] = 10; // Modificar el primer elemento del arreglo
-numeros[2] = 10; // Modificar el primer elemento del arreglo
-numeros[3] = 10; // Modificar el primer elemento del arreglo
-numeros[4] = 10; // Modificar el primer elemento del arreglo
-//numeros[5] = 10; // Esto causará un error de índice fuera de rango
+﻿using System.Collections;
 
-for (int i = 0; i < numeros.Length; i++)
-{
-    Console.WriteLine(numeros[i]);
-}
+int[] numeros = new int[3];
+numeros[0] = 1;
+numeros[1] = 2;
+numeros[2] = 3;
+//numeros[3] = 4;
 
-int[] temp = new int[10];
+int[] temp = new int[5];
 Array.Copy(numeros, temp, numeros.Length);
+temp[3] = 4;
+numeros = temp;
 
-List<int> numerosList = new List<int> { 1, 2, 3, 4, 5 };
-numerosList.Add(10); // Agregar un nuevo elemento a la lista
+List<int> numerosList = new List<int>();
+numerosList.Add(1);
+numerosList.Add(2);
+numerosList.Add(3);
+numerosList.Add(4);
+numerosList.Add(3);
+numerosList.Remove(3);
+numerosList.RemoveAt(0);
+Console.WriteLine(numerosList.Count);
 
-foreach (int numero in numerosList)
-{
-    Console.WriteLine(numero);
-}
+List<string> estudiantes = new List<string>();
+estudiantes.Add("Vilma");
+estudiantes.Add("Camila");
+estudiantes.Add("Devy");
+//estudiantes.Add(123);
+
+ArrayList arrayList = new ArrayList();
+arrayList.Add(1);
+arrayList.Add("texto");
+
+//int numero = (int)arrayList[1];
