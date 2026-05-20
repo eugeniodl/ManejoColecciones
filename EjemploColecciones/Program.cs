@@ -17,7 +17,7 @@ list.Add(1);
 list.Add(2);
 list.Add(3);
 list.Add(4);
-
+list.Add(3);
 list.Remove(3); // por valor
 list.RemoveAt(0); // por índice
 Console.WriteLine($"Tamaño: {list.Count}"); // tamaño actual
@@ -39,7 +39,7 @@ nombres.Add("Ana");
 
 var lista = new ArrayList();
 lista.Add("texto");
-//lista.Add(123);
+lista.Add(123);
 //int numero = (int)lista[0];
 
 void Imprimir(IEnumerable<string> items)
@@ -89,3 +89,18 @@ ModificarPorIndice(nums);
 HashSet<int> set = new HashSet<int> { 1, 2, 3 };
 //ModificarPorIndice(set);
 
+
+string ObtenerValorSeguro(IDictionary<string, int> dict, string clave)
+{
+    if (dict.TryGetValue(clave, out int valor))
+        return $"Encontrado: {valor}";
+
+    return "Clave no existe";
+}
+
+Dictionary<string, int> edades = new Dictionary<string, int>();
+edades.Add("Ana", 25);
+edades.Add("Luis", 30);
+
+Console.WriteLine(edades["Luis"]);
+Console.WriteLine(ObtenerValorSeguro(edades, "Carlos"));
