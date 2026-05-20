@@ -1,58 +1,67 @@
 ﻿using System.Collections;
 
-int[] numeros = new int[3];
-numeros[0] = 1;
-numeros[1] = 2;
-numeros[2] = 3;
-//numeros[3] = 4;
+int[] ints = new int[3];
+
+ints[0] = 1;
+ints[1] = 2;
+ints[2] = 3;
+//ints[3] = 4;
 
 int[] temp = new int[5];
-Array.Copy(numeros, temp, numeros.Length);
+Array.Copy(ints, temp, ints.Length);
 temp[3] = 4;
-numeros = temp;
+ints = temp;
 
 List<int> list = new List<int>();
 list.Add(1);
 list.Add(2);
 list.Add(3);
 list.Add(4);
-list.Add(3);
-//list.Add("Ana");
-list.Remove(3);
-list.RemoveAt(0);
-Console.WriteLine(list.Count);
-Console.WriteLine(list[1]);
 
-ArrayList lista = new ArrayList();
-lista.Add(1);
-lista.Add("Ana");
-//int numero = (int)lista[1];
+list.Remove(3); // por valor
+list.RemoveAt(0); // por índice
+Console.WriteLine($"Tamaño: {list.Count}"); // tamaño actual
+Console.WriteLine($"Elemento -> {list[1]}");
 
+foreach (var item in list)
+{
+    Console.WriteLine($"Elemento -> {item}");
+}
+
+for (int i = 0; i < list.Count; i++)
+{
+    Console.WriteLine($"Elemento -> {list[i]}");
+}
+
+var nombres = new List<string>();
+nombres.Add("Ana");
+//nombres.Add(123);
+
+var lista = new ArrayList();
+lista.Add("texto");
+//lista.Add(123);
+//int numero = (int)lista[0];
 
 void Imprimir(IEnumerable<string> items)
 {
-    foreach (string item in items)
+    foreach (var item in items)
     {
         Console.WriteLine(item);
     }
 }
 
-List<string> estudiantes = new List<string>();
-estudiantes.Add("Felipe");
-estudiantes.Add("Alejandra");
-estudiantes.Add("José");
-string[] arreglo = { "Edgar", "Esteban" };
-HashSet<string> conjunto = new HashSet<string> { "Axl", "Jared" };
-
-Imprimir(estudiantes);
+string[] arreglo = { "A", "B" };
+HashSet<string> conjunto = new HashSet<string> { "E", "F" };
+Imprimir(nombres);
 Imprimir(arreglo);
 Imprimir(conjunto);
+
 
 void ProcesarColeccion(ICollection<string> coleccion)
 {
     Console.WriteLine($"Total: {coleccion.Count}");
 
-    if(!coleccion.IsReadOnly)
+    if (!coleccion.IsReadOnly)
     {
         coleccion.Add("Nuevo elemento");
         coleccion.Remove("Alguno");
@@ -62,35 +71,21 @@ void ProcesarColeccion(ICollection<string> coleccion)
     coleccion.CopyTo(copia, 0);
 }
 
-ProcesarColeccion(estudiantes);
+List<string> strings = new List<string> { "X", "Y" };
+ProcesarColeccion(strings);
 
-void ModificarPorIndice(IList<int> lista)
+
+void ModificarPorIndice(IList<int> list)
 {
-    Console.WriteLine(lista[0]);
-    lista.Insert(1, 99);
-    lista.RemoveAt(2);
-    lista[0] = 100;
+    Console.WriteLine(list[0]);
+    list.Insert(1, 99);
+    list.RemoveAt(2);
+    list[0] = 100;
 }
 
-List<int> ints = new List<int> { 1, 2, 3};
-ModificarPorIndice(ints);
-HashSet<int> ints1 = new HashSet<int> { 1, 2, 3 };
-//ModificarPorIndice(ints1);
+List<int> nums = new List<int> { 1, 2, 3 };
+ModificarPorIndice(nums);
 
-string ObtenerValorSeguro(IDictionary<string, int> dict, string clave)
-{
-    if (dict.TryGetValue(clave, out int valor))
-        return $"Encontrado: {valor}";
-
-    return "Clave no existe";
-}
-
-Dictionary<string, int> edades = new Dictionary<string, int>();
-edades.Add("Ana", 25);
-edades.Add("Luis", 30);
-edades.Add("Adolfo", 30);
-edades.Add("Roberto", 30);
-
-Console.WriteLine(edades["Ana"]);
-Console.WriteLine(ObtenerValorSeguro(edades, "Luis"));
+HashSet<int> set = new HashSet<int> { 1, 2, 3 };
+//ModificarPorIndice(set);
 
