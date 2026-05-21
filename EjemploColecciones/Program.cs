@@ -17,6 +17,7 @@ list.Add(2);
 list.Add(3);
 list.Add(4);
 list.Add(3);
+
 //list.Add("Ana");
 list.Remove(3);
 list.RemoveAt(0);
@@ -92,5 +93,5 @@ edades.Add("Adolfo", 30);
 edades.Add("Roberto", 30);
 
 Console.WriteLine(edades["Ana"]);
-Console.WriteLine(ObtenerValorSeguro(edades, "Luis"));
+Console.WriteLine(ObtenerValorSeguro(edades, "Luisa"));
 
