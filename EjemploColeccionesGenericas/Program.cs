@@ -45,7 +45,7 @@ cola.Enqueue("Primero");
 cola.Enqueue("Segundo");
 cola.Enqueue("Tercero");
 while (cola.Count > 0)
-    Console.WriteLine($"Procesando: {cola.Dequeue}");
+    Console.WriteLine($"Procesando: {cola.Dequeue()}");
 Console.WriteLine();
 
 Console.WriteLine("--- CocurrentDictionary (Hilos) ----");
@@ -56,3 +56,21 @@ foreach (var kvp in diccionarioConcurrente)
     Console.WriteLine($"{kvp.Key}: {kvp.Value}");
 }
 Console.WriteLine();
+
+List<string> fotos = new List<string>();
+
+for (int i = 1; i <= 30; i++)
+{
+    fotos.Add($"foto_{i}.jpg");
+}
+
+void VerFoto(int indice)
+{
+    if (indice >= 0 && indice < fotos.Count)
+        Console.WriteLine($"Mostrando en grande: {fotos[indice-1]}");
+    else
+        Console.WriteLine($"Error: La foto #{indice-1} no existe. " +
+            $"(Total: {fotos.Count} fotos)");
+}
+
+VerFoto(23);
