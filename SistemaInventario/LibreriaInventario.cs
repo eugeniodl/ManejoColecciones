@@ -37,5 +37,44 @@
         _inventario.Add("978-1118314418", stock2);
         _inventario.Add("978-0132350884", stock3);
     }
+
+    public bool Vender(string isbn, int cantidad = 1)
+    {
+        if (!_inventario.TryGetValue(isbn, out var inventario))
+        {
+            Console.WriteLine($"ISBN {isbn} no encontrado");
+            return false;
+        }
+
+        try
+        {
+            inventario.ReducirStock(cantidad);
+            Console.WriteLine($"Vendido: {inventario.Item?.Titulo} (x{cantidad}). " +
+                $"Quedan {inventario.OnHand}");
+            return true;
+        }
+        catch (InvalidOperationException ex)
+        {
+            Console.WriteLine($"{ex.Message}");
+            return false;
+        }
+    }
+
+    public void MostrarInventario()
+    {
+        Console.WriteLine("=== INVENTARIO COMPLETO ===");
+        foreach (var kvp in _inventario)
+        {
+            string isbn = kvp.Key;
+            Stock stock = kvp.Value;
+
+            Console.WriteLine($"ISBN: {isbn}");
+            Console.WriteLine($"Título: {stock.Item.Titulo}");
+            Console.WriteLine($"Autor: {stock.Item.Autor}");
+            Console.WriteLine($"Precio: ${stock.Item.Precio:F2}");
+            Console.WriteLine($"Stock: {stock.OnHand} unidades");
+            Console.WriteLine();
+        }
+    }
 }
 
