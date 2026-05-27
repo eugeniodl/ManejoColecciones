@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EjemploColeccionesGenericas
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SistemaEstudiantes", "SistemaEstudiantes\SistemaEstudiantes.csproj", "{C67CA8B1-433E-2DC4-4262-D171A42FA1FE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SistemaInventario", "SistemaInventario\SistemaInventario.csproj", "{B772245B-F599-242B-71FE-38982F2CDADC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{C67CA8B1-433E-2DC4-4262-D171A42FA1FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C67CA8B1-433E-2DC4-4262-D171A42FA1FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C67CA8B1-433E-2DC4-4262-D171A42FA1FE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B772245B-F599-242B-71FE-38982F2CDADC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B772245B-F599-242B-71FE-38982F2CDADC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B772245B-F599-242B-71FE-38982F2CDADC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B772245B-F599-242B-71FE-38982F2CDADC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
