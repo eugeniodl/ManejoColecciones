@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SistemaEstudiantes", "Siste
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SistemaInventario", "SistemaInventario\SistemaInventario.csproj", "{B772245B-F599-242B-71FE-38982F2CDADC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SistemaCalificaciones", "SistemaCalificaciones\SistemaCalificaciones.csproj", "{482687C4-5B2A-4391-AF17-0F5AE9122855}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{B772245B-F599-242B-71FE-38982F2CDADC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B772245B-F599-242B-71FE-38982F2CDADC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B772245B-F599-242B-71FE-38982F2CDADC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{482687C4-5B2A-4391-AF17-0F5AE9122855}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{482687C4-5B2A-4391-AF17-0F5AE9122855}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{482687C4-5B2A-4391-AF17-0F5AE9122855}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{482687C4-5B2A-4391-AF17-0F5AE9122855}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
