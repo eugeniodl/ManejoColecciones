@@ -70,7 +70,8 @@
             Console.WriteLine($"ISBN: {isbn}");
             Console.WriteLine($"Título: {stock.Item.Titulo}");
             Console.WriteLine($"Autor: {stock.Item.Autor}");
-            Console.WriteLine($"Precio: {stock.OnHand} unidades");
+            Console.WriteLine($"Precio: ${stock.Item.Precio:F2}");
+            Console.WriteLine($"Stock: {stock.OnHand} unidades");
             Console.WriteLine();
         }
     }
